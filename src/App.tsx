@@ -433,13 +433,35 @@ export default function App() {
               />
               
               <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 1.8 }}
-                className="space-y-4"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1.8, duration: 1.5 }}
+                className="flex flex-col items-center mt-8"
               >
-                <div className="text-3xl md:text-5xl tracking-[0.4em] uppercase font-light text-wine/80">MAY 13, 2026</div>
-                <div className="text-lg tracking-[0.2em] uppercase text-wine/40 font-sans">THOOTHUKUDI • 7:00 PM</div>
+                <div className="flex items-center gap-6 md:gap-8 text-wine font-serif text-2xl md:text-4xl tracking-[0.2em] uppercase">
+                  <span>MAY</span>
+                  <div className="w-px h-8 md:h-10 bg-wine/60" />
+                  <span className="text-4xl md:text-6xl font-light">13</span>
+                  <div className="w-px h-8 md:h-10 bg-wine/60" />
+                  <span>WED</span>
+                </div>
+                
+                <div className="w-32 md:w-48 h-px bg-wine/60 my-6 md:my-8" />
+                
+                <div className="text-wine font-serif text-3xl md:text-5xl tracking-[0.3em] font-light">
+                  2026
+                </div>
+                
+                <div className="w-32 md:w-48 h-px bg-wine/60 my-6 md:my-8" />
+                
+                <div className="text-wine font-serif text-xl md:text-3xl tracking-[0.3em]">
+                  7 : 00 PM
+                </div>
+                
+                <div className="mt-12 text-wine/80 text-xs md:text-sm tracking-[0.2em] uppercase font-sans font-bold leading-loose text-center">
+                  BHASKARAN MAHAL,<br/>
+                  V.E. ROAD, THOOTHUKUDI
+                </div>
               </motion.div>
             </div>
           </ParallaxSection>
