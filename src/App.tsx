@@ -330,6 +330,51 @@ const ScrollReveal = ({ children }) => (
   </motion.div>
 );
 
+const EpicScrollSection = () => {
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"]
+  });
+
+  const scale = useTransform(scrollYProgress, [0.3, 0.6], [0.3, 1]);
+  const borderRadius = useTransform(scrollYProgress, [0.3, 0.6], ["50%", "0%"]);
+  const imageScale = useTransform(scrollYProgress, [0.3, 0.6], [2, 1]);
+  const textY = useTransform(scrollYProgress, [0.5, 0.7], [50, 0]);
+  const textOpacity = useTransform(scrollYProgress, [0.5, 0.7], [0, 1]);
+
+  return (
+    <section ref={containerRef} className="h-[250vh] w-full relative z-30">
+      <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden bg-transparent">
+        <motion.div 
+          style={{ scale, borderRadius }}
+          className="w-full h-full relative overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.5)] origin-center"
+        >
+          <motion.img 
+            style={{ scale: imageScale }}
+            src="https://images.unsplash.com/photo-1510137600163-2729bc6959a6?q=80&w=2070&auto=format&fit=crop" 
+            alt="Grand Indian Temple Details" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-wine/40 backdrop-blur-[2px]" />
+          
+          <motion.div 
+            style={{ opacity: textOpacity, y: textY }}
+            className="absolute inset-0 flex flex-col items-center justify-center text-center p-6"
+          >
+            <div className="w-px h-24 bg-gradient-to-b from-transparent to-gold/80 mb-8" />
+            <h2 className="text-gold text-5xl md:text-8xl font-serif italic mb-6 drop-shadow-2xl">Eternal Grace</h2>
+            <p className="text-white text-lg md:text-2xl font-light tracking-[0.3em] uppercase max-w-2xl leading-relaxed drop-shadow-lg">
+              Two families • One beautiful journey
+            </p>
+            <div className="w-px h-24 bg-gradient-to-t from-transparent to-gold/80 mt-8" />
+          </motion.div>
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
 // --- Main App ---
 
 export default function App() {
@@ -386,85 +431,79 @@ export default function App() {
         
 
         {/* Hero Section */}
-        <section className="h-screen w-full flex flex-col items-center justify-center relative overflow-hidden">
-          <ParallaxSection offset={-100}>
-            <div className="text-center z-10 px-8 md:px-24 py-16 border border-white/60 bg-white/40 backdrop-blur-xl rounded-[3rem] shadow-[0_8px_32px_0_rgba(0,0,0,0.05)]">
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1.5 }}
-                className="mb-12 text-wine/40 tracking-[1em] text-xs uppercase font-display"
-              >
-                With the divine blessings of the Almighty
-              </motion.div>
-              
-              <div className="flex flex-col items-center gap-4">
-                <motion.h1 
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 2, ease: [0.16, 1, 0.3, 1] }}
-                  className="text-luxury text-5xl md:text-[7rem] leading-tight"
-                >
-                  Ramasubramanian
-                </motion.h1>
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 0.5, duration: 1.5 }}
-                  className="text-gold italic text-3xl md:text-5xl font-serif py-2 md:py-4"
-                >
-                  &
-                </motion.div>
-                <motion.h1 
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 2, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-                  className="text-luxury text-5xl md:text-[7rem] leading-tight"
-                >
-                  Mallika Priyadharshini
-                </motion.h1>
-              </div>
+        <section className="min-h-[100svh] w-full flex flex-col items-center justify-between relative overflow-hidden py-24 md:py-32">
+          {/* Top Blessing */}
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.5, delay: 0.5 }}
+            className="text-wine/60 tracking-[0.3em] md:tracking-[0.8em] text-[8px] md:text-xs uppercase font-display text-center px-4 z-20"
+          >
+            With the divine blessings of the Almighty
+          </motion.div>
 
-              <motion.div
-                initial={{ width: 0 }}
-                animate={{ width: "200px" }}
-                transition={{ delay: 1.2, duration: 2 }}
-                className="h-px bg-gradient-to-r from-transparent via-gold/50 to-transparent mx-auto my-16"
-              />
-              
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1.8, duration: 1.5 }}
-                className="flex flex-col items-center mt-8"
-              >
-                <div className="flex items-center gap-6 md:gap-8 text-wine font-serif text-2xl md:text-4xl tracking-[0.2em] uppercase">
-                  <span>MAY</span>
-                  <div className="w-px h-8 md:h-10 bg-wine/60" />
-                  <span className="text-4xl md:text-6xl font-light">13</span>
-                  <div className="w-px h-8 md:h-10 bg-wine/60" />
-                  <span>WED</span>
-                </div>
-                
-                <div className="w-32 md:w-48 h-px bg-wine/60 my-6 md:my-8" />
-                
-                <div className="text-wine font-serif text-3xl md:text-5xl tracking-[0.3em] font-light">
-                  2026
-                </div>
-                
-                <div className="w-32 md:w-48 h-px bg-wine/60 my-6 md:my-8" />
-                
-                <div className="text-wine font-serif text-xl md:text-3xl tracking-[0.3em]">
-                  7 : 00 PM
-                </div>
-                
-                <div className="mt-12 text-wine/80 text-xs md:text-sm tracking-[0.2em] uppercase font-sans font-bold leading-loose text-center">
-                  BHASKARAN MAHAL,<br/>
-                  V.E. ROAD, THOOTHUKUDI
-                </div>
-              </motion.div>
+          {/* Center Names */}
+          <ParallaxSection offset={-100}>
+            <div className="flex flex-col items-center justify-center w-full px-6">
+               <motion.div 
+                 className="text-center z-10 px-8 md:px-32 py-16 md:py-24 border border-white/60 bg-white/30 backdrop-blur-xl rounded-[3rem] shadow-[0_20px_60px_-15px_rgba(0,0,0,0.05)] relative"
+               >
+                 {/* Decorative top dot */}
+                 <div className="absolute top-8 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-gold/50" />
+                 
+                 <motion.h1 
+                   initial={{ opacity: 0, y: 30 }}
+                   animate={{ opacity: 1, y: 0 }}
+                   transition={{ duration: 2, ease: [0.16, 1, 0.3, 1] }}
+                   className="text-luxury text-5xl md:text-[7rem] leading-tight"
+                 >
+                   Ramasubramanian
+                 </motion.h1>
+                 
+                 <motion.div
+                   initial={{ opacity: 0, scale: 0.8 }}
+                   animate={{ opacity: 1, scale: 1 }}
+                   transition={{ delay: 0.5, duration: 1.5 }}
+                   className="relative flex items-center justify-center py-8 md:py-16"
+                 >
+                   <div className="absolute left-1/2 -translate-x-1/2 w-48 md:w-96 h-px bg-gradient-to-r from-transparent via-gold/40 to-transparent" />
+                   <span className="text-gold italic text-4xl md:text-6xl font-serif relative z-10 px-8">
+                     &
+                   </span>
+                 </motion.div>
+                 
+                 <motion.h1 
+                   initial={{ opacity: 0, y: 30 }}
+                   animate={{ opacity: 1, y: 0 }}
+                   transition={{ duration: 2, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                   className="text-luxury text-5xl md:text-[7rem] leading-tight"
+                 >
+                   Mallika Priyadharshini
+                 </motion.h1>
+                 
+                 {/* Decorative bottom dot */}
+                 <div className="absolute bottom-8 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-gold/50" />
+               </motion.div>
             </div>
           </ParallaxSection>
+          
+          {/* Bottom Details */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.5, duration: 1.5 }}
+            className="flex flex-col items-center space-y-6 z-20 px-6"
+          >
+             <div className="flex flex-col md:flex-row items-center gap-4 md:gap-12 text-wine/80 font-light tracking-[0.3em] md:tracking-[0.5em] uppercase text-sm md:text-2xl text-center">
+               <span>May 13, 2026</span>
+               <span className="hidden md:block w-1.5 h-1.5 rounded-full bg-gold/50" />
+               <span className="md:hidden w-8 h-px bg-gold/30" />
+               <span>7:00 PM</span>
+             </div>
+             <div className="text-[10px] md:text-sm tracking-[0.4em] uppercase text-wine/40 font-sans text-center">
+               Thoothukudi
+             </div>
+          </motion.div>
         </section>
 
         {/* Invitation Message */}
@@ -485,7 +524,7 @@ export default function App() {
           </ScrollReveal>
         </section>
 
-        <SakuraSeparator />
+        <EpicScrollSection />
 
         {/* Ancestry Section */}
         <section className="py-16 md:py-32 w-full max-w-7xl px-6 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 relative z-20">
