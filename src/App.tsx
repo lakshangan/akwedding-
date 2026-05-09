@@ -440,18 +440,9 @@ export default function App() {
                     {/* Decorative top dot */}
                     <div className="absolute top-8 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-gold/50" />
 
-                    <motion.div
-                      initial={{ opacity: 0, y: -20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 1.5, delay: 0.2 }}
-                      className="text-[10px] md:text-[14px] text-wine/60 uppercase tracking-[1em] mb-4 md:mb-8 font-sans ml-[1em]"
-                    >
-                      The Groom
-                    </motion.div>
-                    
                     <motion.h1
-                      initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
-                      animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                      initial={{ opacity: 0, y: 30 }}
+                      animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 2, ease: [0.16, 1, 0.3, 1] }}
                       className="text-luxury text-5xl md:text-[7rem] leading-tight"
                     >
@@ -459,42 +450,20 @@ export default function App() {
                     </motion.h1>
 
                     <motion.div
-                      initial={{ opacity: 0, scale: 0.5, rotate: -10 }}
-                      animate={{ opacity: 1, scale: 1, rotate: 0 }}
-                      transition={{ delay: 0.6, duration: 2, type: "spring", stiffness: 40 }}
-                      className="relative flex items-center justify-center py-12 md:py-24"
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ delay: 0.5, duration: 1.5 }}
+                      className="relative flex items-center justify-center py-8 md:py-16"
                     >
-                      <div className="absolute left-1/2 -translate-x-1/2 w-[250px] md:w-[500px] h-px bg-gradient-to-r from-transparent via-gold/50 to-transparent" />
-                      <div className="absolute left-1/2 -translate-x-1/2 w-px h-24 md:h-40 bg-gradient-to-b from-transparent via-gold/30 to-transparent" />
-                      
-                      <motion.div 
-                        animate={{ rotate: 360 }}
-                        transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-                        className="absolute w-24 h-24 md:w-32 md:h-32 border-[0.5px] border-gold/40 rounded-full border-dashed"
-                      />
-                      <motion.div 
-                        animate={{ rotate: -360 }}
-                        transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
-                        className="absolute w-28 h-28 md:w-40 md:h-40 border-[0.5px] border-gold/20 rounded-full"
-                      />
-                      
-                      <span className="text-gold text-sm md:text-xl font-display uppercase tracking-[1em] relative z-10 ml-[1em] bg-white/30 backdrop-blur-2xl py-4 px-8 md:px-12 rounded-full border border-gold/40 shadow-[0_0_40px_rgba(212,175,55,0.4)]">
-                        Weds
+                      <div className="absolute left-1/2 -translate-x-1/2 w-48 md:w-96 h-px bg-gradient-to-r from-transparent via-gold/40 to-transparent" />
+                      <span className="text-gold italic text-4xl md:text-6xl font-serif relative z-10 px-8">
+                        &
                       </span>
-                    </motion.div>
-                    
-                    <motion.div
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 1.5, delay: 0.5 }}
-                      className="text-[10px] md:text-[14px] text-wine/60 uppercase tracking-[1em] mb-4 md:mb-8 font-sans ml-[1em]"
-                    >
-                      The Bride
                     </motion.div>
 
                     <motion.h1
-                      initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
-                      animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                      initial={{ opacity: 0, y: 30 }}
+                      animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 2, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
                       className="text-luxury text-5xl md:text-[7rem] leading-tight"
                     >
