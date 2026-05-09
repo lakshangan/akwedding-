@@ -201,7 +201,7 @@ const SakuraDecor = () => {
   return (
     <>
       {/* Top Left Branch */}
-      <div className="fixed -top-12 -left-12 w-[450px] h-[450px] z-[5] pointer-events-none mix-blend-multiply opacity-90">
+      <div className="fixed -top-6 -left-6 md:-top-12 md:-left-12 w-[250px] h-[250px] md:w-[450px] md:h-[450px] z-[5] pointer-events-none mix-blend-multiply opacity-90">
         <motion.img 
           initial={{ rotate: -5, scale: 0.9, opacity: 0 }}
           animate={{ rotate: 0, scale: 1, opacity: 1 }}
@@ -213,7 +213,7 @@ const SakuraDecor = () => {
       </div>
       
       {/* Bottom Right Branch */}
-      <div className="fixed -bottom-24 -right-24 w-[550px] h-[550px] z-[5] pointer-events-none mix-blend-multiply opacity-90">
+      <div className="fixed -bottom-12 -right-12 md:-bottom-24 md:-right-24 w-[300px] h-[300px] md:w-[550px] md:h-[550px] z-[5] pointer-events-none mix-blend-multiply opacity-90">
         <motion.img 
           initial={{ rotate: 5, scale: 0.9, opacity: 0 }}
           animate={{ rotate: 0, scale: 1, opacity: 1 }}
@@ -376,7 +376,7 @@ export default function App() {
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         onClick={() => setIsPlaying(!isPlaying)}
-        className="fixed bottom-12 right-12 z-[70] p-4 border border-white/60 bg-white/40 backdrop-blur-xl rounded-full text-wine hover:bg-rose hover:text-white hover:border-transparent transition-colors group shadow-[0_8px_32px_0_rgba(0,0,0,0.05)]"
+        className="fixed bottom-6 right-6 md:bottom-12 md:right-12 z-[70] p-3 md:p-4 border border-white/60 bg-white/40 backdrop-blur-xl rounded-full text-wine hover:bg-rose hover:text-white hover:border-transparent transition-colors group shadow-[0_8px_32px_0_rgba(0,0,0,0.05)]"
       >
         {isPlaying ? <Volume2 size={24} /> : <VolumeX size={24} />}
       </motion.button>
@@ -403,7 +403,7 @@ export default function App() {
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 2, ease: [0.16, 1, 0.3, 1] }}
-                  className="text-luxury text-6xl md:text-[7rem] leading-tight"
+                  className="text-luxury text-5xl md:text-[7rem] leading-tight"
                 >
                   Ramasubramanian
                 </motion.h1>
@@ -411,7 +411,7 @@ export default function App() {
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 0.5, duration: 1.5 }}
-                  className="text-gold italic text-4xl md:text-5xl font-serif py-4"
+                  className="text-gold italic text-3xl md:text-5xl font-serif py-2 md:py-4"
                 >
                   &
                 </motion.div>
@@ -419,9 +419,9 @@ export default function App() {
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 2, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-                  className="text-luxury text-6xl md:text-[7rem] leading-tight"
+                  className="text-luxury text-5xl md:text-[7rem] leading-tight"
                 >
-                  Malliga Priyadharshini
+                  Mallika Priyadharshini
                 </motion.h1>
               </div>
 
@@ -446,9 +446,9 @@ export default function App() {
         </section>
 
         {/* Invitation Message */}
-        <section className="py-64 px-6 max-w-5xl text-center relative z-20 mx-auto">
+        <section className="py-32 md:py-64 px-6 max-w-5xl text-center relative z-20 mx-auto">
           <ScrollReveal>
-            <div className="p-12 md:p-24 border border-white/60 bg-white/40 backdrop-blur-xl rounded-[3rem] shadow-[0_8px_32px_0_rgba(0,0,0,0.05)]">
+            <div className="p-8 md:p-24 border border-white/60 bg-white/40 backdrop-blur-xl rounded-[2rem] md:rounded-[3rem] shadow-[0_8px_32px_0_rgba(0,0,0,0.05)]">
               <div className="mb-16">
                  <div className="w-16 h-px bg-gold/30 mx-auto mb-8" />
                  <h2 className="text-display text-4xl text-wine mb-12 tracking-[0.3em] uppercase">Artistic Union</h2>
@@ -466,10 +466,10 @@ export default function App() {
         <SakuraSeparator />
 
         {/* Ancestry Section */}
-        <section className="py-32 w-full max-w-7xl px-6 grid grid-cols-1 md:grid-cols-2 gap-24 relative z-20">
+        <section className="py-16 md:py-32 w-full max-w-7xl px-6 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 relative z-20">
           <ScrollReveal>
-            <div className="p-12 border border-white/60 bg-white/40 backdrop-blur-xl rounded-3xl shadow-[0_8px_32px_0_rgba(0,0,0,0.05)]">
-              <h3 className="text-luxury text-3xl mb-8">The Groom's Side</h3>
+            <div className="p-8 md:p-12 border border-white/60 bg-white/40 backdrop-blur-xl rounded-3xl shadow-[0_8px_32px_0_rgba(0,0,0,0.05)]">
+              <h3 className="text-luxury text-2xl md:text-3xl mb-8">The Groom's Side</h3>
               <p className="text-wine text-xl font-bold mb-4">K.S.K. Ramasubramanian, B.Com</p>
               <div className="space-y-6 text-wine/70 text-sm leading-relaxed">
                 <div>
@@ -491,9 +491,9 @@ export default function App() {
           </ScrollReveal>
 
           <ScrollReveal>
-             <div className="p-12 border border-white/60 bg-white/40 backdrop-blur-xl rounded-3xl shadow-[0_8px_32px_0_rgba(0,0,0,0.05)]">
-              <h3 className="text-luxury text-3xl mb-8">The Bride's Side</h3>
-              <p className="text-wine text-xl font-bold mb-4">S. Malliga Priyadharshini, M.Sc</p>
+             <div className="p-8 md:p-12 border border-white/60 bg-white/40 backdrop-blur-xl rounded-3xl shadow-[0_8px_32px_0_rgba(0,0,0,0.05)]">
+              <h3 className="text-luxury text-2xl md:text-3xl mb-8">The Bride's Side</h3>
+              <p className="text-wine text-xl font-bold mb-4">S. Mallika Priyadharshini, M.Sc</p>
               <div className="space-y-6 text-wine/70 text-sm leading-relaxed">
                 <div>
                   <p className="uppercase tracking-widest text-[10px] opacity-60 mb-2">Parents</p>
@@ -502,7 +502,7 @@ export default function App() {
                 <div className="grid grid-cols-2 gap-4">
                   <div>
                     <p className="uppercase tracking-widest text-[10px] opacity-60 mb-2">Paternal Grandparents</p>
-                    <p>Mr. A. Paul Achari & Mrs. Malliga Ammal (Udangudi)</p>
+                    <p>Mr. A. Paul Achari & Mrs. Mallika Ammal (Udangudi)</p>
                   </div>
                   <div>
                     <p className="uppercase tracking-widest text-[10px] opacity-60 mb-2">Maternal Grandparents</p>
@@ -515,9 +515,9 @@ export default function App() {
         </section>
 
         {/* Event Details Grid */}
-        <section className="py-32 w-full max-w-7xl px-6 grid grid-cols-1 lg:grid-cols-3 gap-12 relative z-20">
+        <section className="py-16 md:py-32 w-full max-w-7xl px-6 grid grid-cols-1 lg:grid-cols-3 gap-12 relative z-20">
           <ScrollReveal>
-             <div className="h-full border border-white/60 p-12 bg-white/40 backdrop-blur-xl rounded-tr-[5rem] rounded-bl-[5rem] shadow-[0_8px_32px_0_rgba(0,0,0,0.05)] group hover:bg-white/50 transition-all duration-700">
+             <div className="h-full border border-white/60 p-8 md:p-12 bg-white/40 backdrop-blur-xl rounded-[2rem] md:rounded-tr-[5rem] md:rounded-bl-[5rem] shadow-[0_8px_32px_0_rgba(0,0,0,0.05)] group hover:bg-white/50 transition-all duration-700">
                <Calendar className="text-wine mb-8 w-10 h-10 opacity-30 group-hover:opacity-100 transition-opacity" />
                <h3 className="text-display text-[10px] tracking-[0.5em] text-wine/40 mb-8 uppercase">Ceremony Date</h3>
                <p className="text-serif text-5xl mb-4 text-wine font-light uppercase">May 13</p>
@@ -529,7 +529,7 @@ export default function App() {
           </ScrollReveal>
 
           <ScrollReveal>
-            <div className="h-full border border-white/60 p-12 bg-white/40 backdrop-blur-xl rounded-tl-[5rem] rounded-br-[5rem] shadow-[0_8px_32px_0_rgba(0,0,0,0.05)] group hover:bg-white/50 transition-all duration-700">
+            <div className="h-full border border-white/60 p-8 md:p-12 bg-white/40 backdrop-blur-xl rounded-[2rem] md:rounded-tl-[5rem] md:rounded-br-[5rem] shadow-[0_8px_32px_0_rgba(0,0,0,0.05)] group hover:bg-white/50 transition-all duration-700">
               <Clock className="text-wine mb-8 w-10 h-10 opacity-30 group-hover:opacity-100 transition-opacity" />
               <h3 className="text-display text-[10px] tracking-[0.5em] text-wine/40 mb-8 uppercase">Auspicious Time</h3>
               <p className="text-serif text-5xl mb-4 text-wine font-light uppercase">7:00 PM</p>
@@ -541,7 +541,7 @@ export default function App() {
           </ScrollReveal>
 
           <ScrollReveal>
-            <div className="h-full border border-white/60 p-12 bg-white/40 backdrop-blur-xl rounded-tr-[5rem] rounded-bl-[5rem] shadow-[0_8px_32px_0_rgba(0,0,0,0.05)] group hover:bg-white/50 transition-all duration-700">
+            <div className="h-full border border-white/60 p-8 md:p-12 bg-white/40 backdrop-blur-xl rounded-[2rem] md:rounded-tr-[5rem] md:rounded-bl-[5rem] shadow-[0_8px_32px_0_rgba(0,0,0,0.05)] group hover:bg-white/50 transition-all duration-700">
               <MapPin className="text-wine mb-8 w-10 h-10 opacity-30 group-hover:opacity-100 transition-opacity" />
               <h3 className="text-display text-[10px] tracking-[0.5em] text-wine/40 mb-8 uppercase">The Venue</h3>
               <p className="text-serif text-4xl mb-4 text-wine font-light uppercase">Bhaskaran Mahal</p>
@@ -554,12 +554,12 @@ export default function App() {
         </section>
 
         {/* Hosts Section */}
-        <section className="w-full relative py-32 px-6 bg-white/40 backdrop-blur-xl border-y border-white/60 shadow-[0_8px_32px_0_rgba(0,0,0,0.05)] max-w-7xl mx-auto rounded-3xl">
-          <div className="text-center mb-16">
-            <h2 className="text-luxury text-4xl mb-4">Our Loving Family</h2>
+        <section className="w-full relative py-16 md:py-32 px-6 md:px-12 bg-white/40 backdrop-blur-xl border-y border-white/60 shadow-[0_8px_32px_0_rgba(0,0,0,0.05)] max-w-7xl mx-auto rounded-[2rem] md:rounded-3xl">
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="text-luxury text-3xl md:text-4xl mb-4">Our Loving Family</h2>
             <div className="w-24 h-px bg-gold/30 mx-auto" />
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 px-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 px-2 md:px-12">
             <div>
               <h4 className="text-wine font-bold uppercase tracking-[0.3em] text-xs mb-8">Groom's Representatives</h4>
               <ul className="space-y-4 text-wine/70 font-serif italic text-lg opacity-80">
@@ -577,21 +577,21 @@ export default function App() {
                 <li>S. Senthil Arumugam & Vadivu Kala</li>
                 <li>S. Balakrishnan, B.E. (Chennai)</li>
                 <li>S. Sakthi Balakrishnan, B.Sc.</li>
-                <li>S. Malliga Durga, B.E.</li>
+                <li>S. Mallika Durga, B.E.</li>
               </ul>
             </div>
           </div>
         </section>
 
         {/* Business Partners Section */}
-        <section className="py-24 w-full max-w-5xl mx-auto px-6 text-center relative z-20">
+        <section className="py-16 md:py-24 w-full max-w-5xl mx-auto px-6 text-center relative z-20">
           <ScrollReveal>
-            <div className="p-12 border border-white/60 bg-white/40 backdrop-blur-xl rounded-[3rem] shadow-[0_8px_32px_0_rgba(0,0,0,0.05)]">
+            <div className="p-8 md:p-12 border border-white/60 bg-white/40 backdrop-blur-xl rounded-[2rem] md:rounded-[3rem] shadow-[0_8px_32px_0_rgba(0,0,0,0.05)]">
               <h4 className="text-[10px] uppercase tracking-[0.5em] text-wine/30 mb-8">Special Thanks to</h4>
               <div className="flex flex-wrap justify-center gap-12 text-wine/60 font-serif italic text-xl">
                 <span>Meena Jewellers</span>
                 <span className="text-gold/30">•</span>
-                <span>Sri Malliga Jewellers</span>
+                <span>Sri Mallika Jewellers</span>
                 <span className="text-gold/30">•</span>
                 <span>APK Groups</span>
                 <span className="text-gold/30">•</span>
@@ -602,14 +602,14 @@ export default function App() {
         </section>
 
         {/* Motif Section */}
-        <section className="w-full relative py-48 px-6">
-           <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+        <section className="w-full relative py-24 md:py-48 px-6">
+           <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-24 items-center">
              <ScrollReveal>
-                <div className="relative p-8 md:p-16 border border-white/60 bg-white/40 backdrop-blur-xl rounded-3xl shadow-[0_8px_32px_0_rgba(0,0,0,0.05)]">
-                  <div className="absolute top-0 right-0 p-8 opacity-5">
-                    <img src={branchTL} alt="decor" className="w-64 h-64 mix-blend-multiply" />
+                <div className="relative p-8 md:p-16 border border-white/60 bg-white/40 backdrop-blur-xl rounded-[2rem] md:rounded-3xl shadow-[0_8px_32px_0_rgba(0,0,0,0.05)] overflow-hidden">
+                  <div className="absolute top-0 right-0 p-4 md:p-8 opacity-5">
+                    <img src={branchTL} alt="decor" className="w-32 h-32 md:w-64 md:h-64 mix-blend-multiply" />
                   </div>
-                  <h2 className="text-luxury text-4xl md:text-6xl mb-12">Sacred <br/> Beginnings</h2>
+                  <h2 className="text-luxury text-4xl md:text-6xl mb-8 md:mb-12">Sacred <br/> Beginnings</h2>
                   <p className="text-serif text-xl leading-relaxed text-wine/70 italic">
                     As we exchange our vows in the coastal breeze of Thoothukudi, 
                     we invite you to witness the sparkle of our new beginning. 
@@ -623,8 +623,8 @@ export default function App() {
                 </div>
              </ScrollReveal>
              
-             <div className="grid grid-cols-2 gap-8 h-full">
-               <ParallaxSection offset={-60}>
+             <div className="grid grid-cols-2 gap-4 md:gap-8 h-full">
+               <ParallaxSection offset={-30}>
                  <div className="aspect-[3/4] rounded-t-full overflow-hidden border-4 border-white shadow-2xl group">
                     <img 
                       src="https://images.unsplash.com/photo-1595914108199-3fbc06718919?q=80&w=2070&auto=format&fit=crop" 
@@ -634,8 +634,8 @@ export default function App() {
                     />
                  </div>
                </ParallaxSection>
-               <ParallaxSection offset={60}>
-                 <div className="aspect-[3/4] rounded-t-full overflow-hidden border-4 border-white shadow-2xl mt-12 group">
+               <ParallaxSection offset={30}>
+                 <div className="aspect-[3/4] rounded-t-full overflow-hidden border-2 md:border-4 border-white shadow-xl md:shadow-2xl mt-8 md:mt-12 group">
                     <img 
                       src="https://images.unsplash.com/photo-1510137600163-2729bc6959a6?q=80&w=2070&auto=format&fit=crop" 
                       alt="Temple Pillar" 
@@ -649,17 +649,17 @@ export default function App() {
         </section>
 
         {/* RSVP Section */}
-        <section className="py-64 w-full flex justify-center px-6 relative z-20">
+        <section className="py-32 md:py-64 w-full flex justify-center px-6 relative z-20">
           <ScrollReveal>
-            <div className="max-w-4xl w-full border border-white/60 p-12 md:p-32 bg-white/50 backdrop-blur-2xl relative rounded-[3rem] shadow-[0_8px_32px_0_rgba(0,0,0,0.05)]">
-              <div className="absolute top-12 left-1/2 -translate-x-1/2 flex items-center gap-4 text-wine/30">
-                <div className="w-12 h-px bg-current" />
-                <sparkles size={14} />
-                <div className="w-12 h-px bg-current" />
+            <div className="max-w-4xl w-full border border-white/60 p-8 md:p-32 bg-white/50 backdrop-blur-2xl relative rounded-[2rem] md:rounded-[3rem] shadow-[0_8px_32px_0_rgba(0,0,0,0.05)]">
+              <div className="absolute top-6 md:top-12 left-1/2 -translate-x-1/2 flex items-center gap-4 text-wine/30">
+                <div className="w-8 md:w-12 h-px bg-current" />
+                <Sparkles size={14} />
+                <div className="w-8 md:w-12 h-px bg-current" />
               </div>
               
-              <div className="text-center mb-20">
-                <h2 className="text-display text-5xl text-wine mb-8 tracking-[0.2em] font-light uppercase">Contact Us</h2>
+              <div className="text-center mt-4 md:mt-0 mb-12 md:mb-20">
+                <h2 className="text-display text-3xl md:text-5xl text-wine mb-4 md:mb-8 tracking-[0.2em] font-light uppercase">Contact Us</h2>
                 <div className="space-y-2 text-wine/60 font-bold tracking-widest">
                   <p>94431 24837</p>
                   <p>94430 24226</p>
@@ -698,19 +698,19 @@ export default function App() {
         </section>
 
         {/* Footer */}
-        <footer className="py-48 w-full max-w-5xl mx-auto px-6 block text-center relative z-20">
+        <footer className="py-24 md:py-48 w-full max-w-5xl mx-auto px-6 block text-center relative z-20">
           <ScrollReveal>
-            <div className="p-16 md:p-24 border border-white/60 bg-white/40 backdrop-blur-xl rounded-[3rem] shadow-[0_8px_32px_0_rgba(0,0,0,0.05)]">
-              <div className="text-luxury text-3xl mb-4 italic opacity-80">Ramasubramanian & Malliga Priyadharshini</div>
-              <p className="text-[10px] tracking-[1.2em] text-wine/40 uppercase mb-8 ml-[1.2em]">Sacred Union • Eternal Joy</p>
-              <div className="flex justify-center gap-12 text-rose/40">
+            <div className="p-8 md:p-24 border border-white/60 bg-white/40 backdrop-blur-xl rounded-[2rem] md:rounded-[3rem] shadow-[0_8px_32px_0_rgba(0,0,0,0.05)]">
+              <div className="text-luxury text-2xl md:text-3xl mb-4 italic opacity-80">Ramasubramanian <br className="block md:hidden"/>& Mallika Priyadharshini</div>
+              <p className="text-[8px] md:text-[10px] tracking-[0.8em] md:tracking-[1.2em] text-wine/40 uppercase mb-8 ml-[0.8em] md:ml-[1.2em]">Sacred Union • Eternal Joy</p>
+              <div className="flex justify-center gap-8 md:gap-12 text-rose/40">
                 <Music size={20} />
                 <Heart size={20} fill="currentColor" />
                 <Sparkles size={20} />
               </div>
-              <div className="mt-24 flex justify-center gap-32 opacity-10">
-                  <img src={petalImg} className="w-12 h-12 mix-blend-multiply" />
-                  <img src={petalImg} className="w-12 h-12 mix-blend-multiply -scale-x-100" />
+              <div className="mt-12 md:mt-24 flex justify-center gap-16 md:gap-32 opacity-10">
+                  <img src={petalImg} className="w-8 h-8 md:w-12 md:h-12 mix-blend-multiply" />
+                  <img src={petalImg} className="w-8 h-8 md:w-12 md:h-12 mix-blend-multiply -scale-x-100" />
               </div>
             </div>
           </ScrollReveal>
