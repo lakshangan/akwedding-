@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Cinzel Decorative", serif;
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Inter", sans-serif;
+  
+  --color-temple-cream: #FFFAF0;
+  --color-gold: #C5A021;
+  --color-gold-light: #F9E2AF;
+  --color-rose: #F4C2C2;
+  --color-wine: #4A0404;
+  --color-leaf: #2D5A27;
+  --color-marigold: #FF8C00;
+  --color-jasmine: #FFFFFF;
+}
+
+@layer base {
+  body {
+    @apply bg-white text-wine font-sans overflow-x-hidden;
+  }
+}
+
+@layer utilities {
+  .text-luxury {
+    @apply font-serif tracking-tight;
+    color: var(--color-wine);
+  }
+
+  .gold-glow {
+    filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.5));
+  }
+
+  .rose-glow {
+    filter: drop-shadow(0 0 10px rgba(229, 115, 115, 0.4));
+  }
+
+  .inset-border-outer {
+    @apply fixed inset-8 border border-gold/30 pointer-events-none z-[60];
+  }
+
+  .inset-border-inner {
+    @apply fixed inset-4 border border-gold/15 pointer-events-none z-[60];
+  }
+
+  .petal {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 150% 0 150% 0;
+    opacity: 0.6;
+    pointer-events: none;
+  }
+
+  .bloom-spread {
+    animation: bloom 3s ease-out forwards;
+  }
+
+  @keyframes bloom {
+    from { transform: scale(0.8) opacity(0); }
+    to { transform: scale(1) opacity(1); }
+  }
+}
