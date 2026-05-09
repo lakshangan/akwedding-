@@ -8,6 +8,7 @@ import petalImg from './assets/sakura-petal.png';
 import branchTL from './assets/sakura-branch-tl.png';
 import branchBR from './assets/sakura-branch-br.png';
 import preloaderBg from './assets/preloader-bg.png';
+import coupleImg from './assets/couple.png';
 
 const Preloader = ({ onComplete }) => {
   const [step, setStep] = useState(0);
@@ -352,9 +353,9 @@ const EpicScrollSection = () => {
         >
           <motion.img
             style={{ scale: imageScale }}
-            src="https://images.unsplash.com/photo-1510137600163-2729bc6959a6?q=80&w=2070&auto=format&fit=crop"
-            alt="Grand Indian Temple Details"
-            className="w-full h-full object-cover"
+            src={coupleImg}
+            alt="The Couple"
+            className="w-full h-full object-cover object-top"
           />
           <div className="absolute inset-0 bg-wine/40 backdrop-blur-[2px]" />
 
