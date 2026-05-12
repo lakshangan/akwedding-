@@ -382,97 +382,120 @@ const EpicScrollSection = () => {
 };
 
 const RoyalDecorativeSection = () => {
-  const containerRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end start"]
-  });
-
-  const y1 = useTransform(scrollYProgress, [0, 1], [0, -200]);
-  const y2 = useTransform(scrollYProgress, [0, 1], [0, -400]);
-  const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
-
   return (
-    <section ref={containerRef} className="relative h-[150vh] w-full bg-wine overflow-hidden z-20">
-      {/* Cinematic Background Layer */}
-      <motion.div style={{ opacity }} className="sticky top-0 h-screen w-full flex items-center justify-center">
-        {/* Deep Parallax Ornaments */}
+    <section className="relative w-full bg-wine overflow-hidden z-20 py-32 md:py-48">
+      {/* Subtle Ornamental Rings */}
+      <div className="absolute inset-0 pointer-events-none">
         <motion.div
-          style={{ y: y1, rotate: 15 }}
-          className="absolute -top-1/4 -left-1/4 w-[120%] h-[120%] border-[0.5px] border-gold/10 rounded-full"
+          animate={{ rotate: 360 }}
+          transition={{ duration: 200, repeat: Infinity, ease: "linear" }}
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] md:w-[900px] md:h-[900px] border-[0.5px] border-gold/8 rounded-full"
         />
         <motion.div
-          style={{ y: y2, rotate: -15 }}
-          className="absolute -bottom-1/4 -right-1/4 w-[120%] h-[120%] border-[0.5px] border-gold/10 rounded-full"
+          animate={{ rotate: -360 }}
+          transition={{ duration: 300, repeat: Infinity, ease: "linear" }}
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] md:w-[1200px] md:h-[1200px] border-[0.5px] border-gold/5 rounded-full"
         />
+      </div>
 
-        {/* Ambient Glows */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(138,3,3,0)_0%,rgba(128,0,32,0.8)_100%)]" />
-        <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-black/40 to-transparent" />
-        <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-black/40 to-transparent" />
+      {/* Ambient Radial Glow */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_50%,rgba(180,40,40,0.3)_0%,transparent_70%)]" />
 
-        <div className="relative z-10 max-w-6xl mx-auto px-6 text-center">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 2, ease: [0.16, 1, 0.3, 1] }}
-            className="space-y-12"
-          >
-            {/* Elegant Header */}
-            <div className="flex flex-col items-center gap-4">
-              <div className="w-px h-16 bg-gradient-to-b from-transparent via-gold/50 to-transparent" />
-              <Bird size={32} className="text-gold/40 rotate-[-10deg] drop-shadow-glow" />
-            </div>
+      {/* Large Faint Heart */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-[0.03]">
+        <Heart size={600} fill="currentColor" className="text-white" />
+      </div>
 
-            {/* Quote with Masking Effect */}
-            <div className="overflow-hidden">
-              <motion.h2
-                initial={{ y: "100%" }}
-                whileInView={{ y: 0 }}
-                transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
-                className="text-gold-light text-4xl md:text-8xl font-serif italic leading-tight"
-              >
-                "In the garden of love, <br />
-                we bloom together <br />
-                under the sacred stars."
-              </motion.h2>
-            </div>
-
-            <div className="flex flex-col items-center gap-8 pt-8">
-              <div className="flex items-center gap-8 text-gold/30">
-                <div className="w-24 h-px bg-current" />
-                <span className="text-[10px] tracking-[1em] uppercase font-bold text-gold/60">Forever & Always</span>
-                <div className="w-24 h-px bg-current" />
-              </div>
-              <div className="w-px h-16 bg-gradient-to-t from-transparent via-gold/50 to-transparent" />
-            </div>
-          </motion.div>
-        </div>
-
-        {/* Cinematic Particles */}
-        <div className="absolute inset-0 pointer-events-none">
-          {[...Array(30)].map((_, i) => (
+      {/* Content */}
+      <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 1.5 }}
+          className="space-y-10"
+        >
+          {/* Heartbeat Icon */}
+          <div className="flex flex-col items-center gap-6">
+            <div className="w-px h-16 bg-gradient-to-b from-transparent via-gold/40 to-transparent" />
             <motion.div
-              key={i}
-              animate={{
-                y: [0, -100, 0],
-                opacity: [0, 0.5, 0],
-                scale: [0, 1, 0]
-              }}
-              transition={{
-                duration: 10 + Math.random() * 10,
-                repeat: Infinity,
-                delay: Math.random() * 5
-              }}
-              className="absolute w-1 h-1 bg-gold/40 rounded-full blur-[1px]"
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`
-              }}
-            />
-          ))}
-        </div>
-      </motion.div>
+              animate={{ scale: [1, 1.15, 1] }}
+              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+              className="relative"
+            >
+              <Heart size={36} className="text-gold/80" fill="currentColor" />
+              <div className="absolute inset-0 blur-2xl bg-gold/20 rounded-full" />
+            </motion.div>
+          </div>
+
+          {/* Quote Lines — Staggered Reveal */}
+          <div className="space-y-2 md:space-y-3">
+            {[
+              "\"In the garden of love,",
+              "we bloom together",
+              "under the sacred stars.\""
+            ].map((line, i) => (
+              <div key={i} className="overflow-hidden">
+                <motion.p
+                  initial={{ y: "100%", opacity: 0 }}
+                  whileInView={{ y: 0, opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 1.2, delay: 0.3 + i * 0.2, ease: [0.16, 1, 0.3, 1] }}
+                  className="text-gold-light text-3xl md:text-7xl font-serif italic leading-snug"
+                >
+                  {line}
+                </motion.p>
+              </div>
+            ))}
+          </div>
+
+          {/* Divider + Tagline */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, delay: 1 }}
+            className="flex flex-col items-center gap-6 pt-4"
+          >
+            <div className="flex items-center gap-6 text-gold/30">
+              <div className="w-16 md:w-24 h-px bg-current" />
+              <span className="text-[9px] md:text-[10px] tracking-[1em] uppercase font-bold text-gold/50">Forever & Always</span>
+              <div className="w-16 md:w-24 h-px bg-current" />
+            </div>
+            <div className="w-px h-12 bg-gradient-to-t from-transparent via-gold/30 to-transparent" />
+          </motion.div>
+        </motion.div>
+      </div>
+
+      {/* Floating Hearts + Gold Dust */}
+      <div className="absolute inset-0 pointer-events-none">
+        {[...Array(15)].map((_, i) => (
+          <motion.div
+            key={i}
+            animate={{
+              y: [0, -100],
+              opacity: [0, 0.4, 0],
+              scale: [0.5, 1, 0.5]
+            }}
+            transition={{
+              duration: 8 + Math.random() * 8,
+              repeat: Infinity,
+              delay: Math.random() * 6
+            }}
+            className="absolute"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${50 + Math.random() * 50}%`
+            }}
+          >
+            {i % 4 === 0 ? (
+              <Heart size={10} fill="currentColor" className="text-rose/15" />
+            ) : (
+              <div className="w-1 h-1 bg-gold/30 rounded-full blur-[0.5px]" />
+            )}
+          </motion.div>
+        ))}
+      </div>
     </section>
   );
 };
