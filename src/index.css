@@ -5,12 +5,12 @@
   --font-display: "Cinzel Decorative", serif;
   --font-serif: "Playfair Display", serif;
   --font-sans: "Inter", sans-serif;
-  
-  --color-temple-cream: #FFFAF0;
-  --color-gold: #C5A021;
-  --color-gold-light: #F9E2AF;
-  --color-rose: #F4C2C2;
-  --color-wine: #4A0404;
+
+  --color-temple-cream: #F9F4E8;
+  --color-gold: #D4AF37;
+  --color-gold-light: #F6ECCC;
+  --color-rose: #C41E3A;
+  --color-wine: #800020;
   --color-leaf: #2D5A27;
   --color-marigold: #FF8C00;
   --color-jasmine: #FFFFFF;
@@ -58,7 +58,12 @@
   }
 
   @keyframes bloom {
-    from { transform: scale(0.8) opacity(0); }
-    to { transform: scale(1) opacity(1); }
+    from {
+      transform: scale(0.8) opacity(0);
+    }
+
+    to {
+      transform: scale(1) opacity(1);
+    }
   }
 }
