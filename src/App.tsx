@@ -10,6 +10,7 @@ import branchBR from './assets/sakura-branch-br.png';
 import preloaderBg from './assets/preloader-bg.png';
 import coupleImg from './assets/couple.png';
 import expandingImg from './assets/image.png';
+import sacredImg from './assets/image2.png';
 
 const Preloader = ({ onComplete }) => {
   const [step, setStep] = useState(0);
@@ -344,7 +345,7 @@ const EpicScrollSection = () => {
   const imageScale = useTransform(scrollYProgress, [0.3, 0.6], [2, 1]);
   const blurValue = useTransform(scrollYProgress, [0.3, 0.5], [20, 0]);
   const blur = useTransform(blurValue, (v) => `blur(${v}px)`);
-  
+
   const textY = useTransform(scrollYProgress, [0.5, 0.7], [50, 0]);
   const textOpacity = useTransform(scrollYProgress, [0.5, 0.7], [0, 1]);
 
@@ -745,28 +746,15 @@ export default function App() {
                   </div>
                 </ScrollReveal>
 
-                <div className="grid grid-cols-2 gap-4 md:gap-8 h-full">
-                  <ParallaxSection offset={-30}>
-                    <div className="aspect-[3/4] rounded-t-full overflow-hidden border-4 border-white shadow-2xl group">
-                      <img
-                        src="https://images.unsplash.com/photo-1595914108199-3fbc06718919?q=80&w=2070&auto=format&fit=crop"
-                        alt="Indian Wedding Jewelry"
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
-                        referrerPolicy="no-referrer"
-                      />
-                    </div>
-                  </ParallaxSection>
-                  <ParallaxSection offset={30}>
-                    <div className="aspect-[3/4] rounded-t-full overflow-hidden border-2 md:border-4 border-white shadow-xl md:shadow-2xl mt-8 md:mt-12 group">
-                      <img
-                        src="https://images.unsplash.com/photo-1510137600163-2729bc6959a6?q=80&w=2070&auto=format&fit=crop"
-                        alt="Temple Pillar"
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
-                        referrerPolicy="no-referrer"
-                      />
-                    </div>
-                  </ParallaxSection>
-                </div>
+                <ScrollReveal>
+                  <div className="aspect-[3/4] max-w-md mx-auto rounded-t-full overflow-hidden border-4 border-white shadow-2xl group">
+                    <img
+                      src={sacredImg}
+                      alt="Wedding Moment"
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
+                    />
+                  </div>
+                </ScrollReveal>
               </div>
             </section>
 
@@ -784,7 +772,7 @@ export default function App() {
                     <h2 className="text-display text-3xl md:text-5xl text-wine mb-8 md:mb-12 tracking-[0.2em] font-light uppercase italic">Balaji <Heart size={24} className="inline-block mx-4 text-rose" fill="currentColor" /> Akshaya</h2>
                     <div className="space-y-6 text-wine/80 font-serif italic text-lg md:text-xl leading-relaxed max-w-2xl mx-auto">
                       <p>Together with our families, we joyfully invite you to celebrate our wedding ceremony.</p>
-                      
+
                       <div className="py-8 border-y border-gold/10 space-y-2">
                         <p className="font-sans uppercase tracking-[0.4em] text-xs font-bold text-gold">4 June 2026</p>
                         <p className="font-sans uppercase tracking-[0.2em] text-xs">7:30 AM - 9:00 AM</p>
@@ -792,7 +780,7 @@ export default function App() {
                       </div>
 
                       <p className="pt-6">We look forward to celebrating this beautiful occasion with you and your family.</p>
-                      
+
                       <div className="pt-8">
                         <p className="font-sans uppercase tracking-[0.6em] text-[10px] opacity-40 mb-2">With Love,</p>
                         <p className="text-3xl font-luxury text-wine not-italic">Balaji & Akshaya</p>
