@@ -44,6 +44,24 @@
     @apply fixed inset-4 border border-gold/15 pointer-events-none z-[60];
   }
 
+  .floral-corner-light {
+    background-image: url('./assets/sakura-branch-tl.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.15;
+    mix-blend-mode: multiply;
+    pointer-events: none;
+  }
+
+  .floral-corner-alt {
+    background-image: url('./assets/gold-floral-corner.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.2;
+    mix-blend-mode: multiply;
+    pointer-events: none;
+  }
+
   .petal {
     position: absolute;
     width: 15px;
