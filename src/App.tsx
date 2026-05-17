@@ -7,7 +7,7 @@ import branchTL from './assets/sakura-branch-tl.png';
 import branchBR from './assets/sakura-branch-br.png';
 import preloaderBg from './assets/preloader-bg.png';
 import coupleImg from './assets/couple.png';
-import expandingImg from './assets/image.png';
+import expandingImg from './assets/hero-image.png';
 import sacredImg from './assets/image2.png';
 import kondattamAudio from './assets/Kondattam 130.9 170.9.mp3';
 import waxSeal from './assets/crest.png';
@@ -725,32 +725,22 @@ const MainContent = ({ isPlaying, setIsPlaying }: { isPlaying: boolean, setIsPla
 
         {/* Ancestry Section */}
         <section className="py-16 md:py-32 w-full max-w-7xl px-6 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 relative z-20">
-          <div className="absolute -top-16 right-0 w-64 h-64 md:w-96 md:h-96 floral-corner-alt scale-x-[-1] opacity-40 -z-10 pointer-events-none" />
-          <div className="absolute -bottom-16 left-0 w-64 h-64 md:w-96 md:h-96 floral-corner-alt scale-y-[-1] opacity-40 -z-10 pointer-events-none" />
           <ScrollReveal>
             <div className="p-8 md:p-12 border border-wine/10 bg-white/80 backdrop-blur-2xl rounded-3xl shadow-[0_20px_40px_rgba(128,0,32,0.05)] relative overflow-hidden group">
               <div className="absolute top-0 right-0 w-32 h-32 floral-corner-light scale-x-[-1] transition-transform duration-700 group-hover:scale-[1.1] origin-top-right" />
               <div className="absolute bottom-0 left-0 w-32 h-32 floral-corner-light scale-y-[-1] transition-transform duration-700 group-hover:scale-[1.1] origin-bottom-left" />
-              
+
               <div className="relative z-10">
                 <h3 className="text-luxury text-2xl md:text-3xl mb-8">The Groom's Side</h3>
-              <p className="text-wine text-xl font-bold mb-4">M. Balaji, B.E., Civil & Structural Engineering</p>
-              <div className="space-y-6 text-wine/80 text-sm leading-relaxed">
-                <div>
+                <p className="text-wine text-xl font-bold mb-4">M. Balaji, B.E., Civil & Structural Engineering</p>
+                <div className="space-y-6 text-wine/80 text-sm leading-relaxed">
                   <p className="uppercase tracking-widest text-[10px] text-wine/50 mb-2">Parents</p>
-                  <p className="text-base">Mr. R. Radhakrishnan & Mrs. Kalaivani Radhakrishnan</p>
-                  <p className="text-xs italic mt-1 text-wine/60">From Sirkazhi</p>
+
+                  <div> <p className="text-base">Late Mr. R. Murugan Naidu & Mrs. Rajalakshmi Murugan</p>
+
+                    <p className="text-xs italic mt-1 text-wine/60">From Chidambaram</p>
+                  </div>
                 </div>
-                <div>
-                  <p className="uppercase tracking-widest text-[10px] text-wine/50 mb-2">Proprietor of</p>
-                  <ul className="list-disc list-inside opacity-90 space-y-1">
-                    <li>Murugan Textile</li>
-                    <li>Black Spade</li>
-                    <li>Altitude Menswear</li>
-                    <li>Retro Menswear</li>
-                  </ul>
-                </div>
-              </div>
               </div>
             </div>
           </ScrollReveal>
@@ -762,18 +752,15 @@ const MainContent = ({ isPlaying, setIsPlaying }: { isPlaying: boolean, setIsPla
 
               <div className="relative z-10">
                 <h3 className="text-luxury text-2xl md:text-3xl mb-8">The Bride's Side</h3>
-              <p className="text-wine text-xl font-bold mb-4">R. Akshaya, M.B.A.</p>
-              <div className="space-y-6 text-wine/80 text-sm leading-relaxed">
-                <div>
-                  <p className="uppercase tracking-widest text-[10px] text-wine/50 mb-2">Parents</p>
-                  <p className="text-base">Late Mr. R. Murugan Naidu & Mrs. Rajalakshmi Murugan</p>
-                  <p className="text-xs italic mt-1 text-wine/60">From Chidambaram</p>
+                <p className="text-wine text-xl font-bold mb-4">R. Akshaya, M.B.A.</p>
+                <div className="space-y-6 text-wine/80 text-sm leading-relaxed">
+                  <div>
+                    <p className="uppercase tracking-widest text-[10px] text-wine/50 mb-2">Parents</p>
+                    <p className="text-base">Mr. R. Radhakrishnan & Mrs. Kalaivani Radhakrishnan</p>
+                    <p className="text-xs italic mt-1 text-wine/60">From Sirkazhi</p>
+                  </div>
+
                 </div>
-                <div>
-                  <p className="uppercase tracking-widest text-[10px] text-wine/50 mb-2">Specialization</p>
-                  <p className="text-base opacity-90">Finance with Business Analytics</p>
-                </div>
-              </div>
               </div>
             </div>
           </ScrollReveal>
@@ -781,19 +768,18 @@ const MainContent = ({ isPlaying, setIsPlaying }: { isPlaying: boolean, setIsPla
 
         {/* Event Details Grid */}
         <section className="py-16 md:py-32 w-full max-w-7xl px-6 grid grid-cols-1 lg:grid-cols-3 gap-12 relative z-20">
-          <div className="absolute top-1/2 left-0 -translate-y-1/2 w-64 h-64 md:w-80 md:h-80 floral-corner-alt opacity-40 -z-10 pointer-events-none" />
-          <div className="absolute top-1/2 right-0 -translate-y-1/2 w-64 h-64 md:w-80 md:h-80 floral-corner-alt scale-x-[-1] opacity-40 -z-10 pointer-events-none" />
           <ScrollReveal>
             <div className="h-full border border-wine/10 p-8 md:p-12 bg-white/80 backdrop-blur-2xl rounded-[2rem] md:rounded-tr-[5rem] md:rounded-bl-[5rem] shadow-[0_20px_40px_rgba(128,0,32,0.05)] group hover:bg-white hover:border-wine/20 transition-all duration-700 relative overflow-hidden">
               <div className="absolute top-0 right-0 w-40 h-40 floral-corner-light scale-x-[-1] opacity-10 group-hover:opacity-20 transition-opacity duration-700" />
               <div className="relative z-10">
                 <Calendar className="text-wine mb-8 w-10 h-10 opacity-30 group-hover:opacity-60 transition-opacity" />
-              <h3 className="text-display text-[10px] tracking-[0.5em] text-wine/40 mb-8 uppercase">Ceremony Date</h3>
-              <p className="text-serif text-5xl mb-4 text-wine font-light uppercase">June 4</p>
-              <p className="text-serif text-lg text-wine/60 italic font-serif">Thursday, 2026</p>
-              <div className="mt-8 pt-8 border-t border-wine/10 text-[10px] uppercase tracking-widest text-wine/40 leading-loose">
-                Wedding Ceremony
-              </div>
+                <h3 className="text-display text-[10px] tracking-[0.5em] text-wine/40 mb-8 uppercase">Reception</h3>
+                <p className="text-serif text-5xl mb-4 text-wine font-light uppercase">June 3</p>
+                <p className="text-serif text-lg text-wine/60 italic font-serif">Wednesday, 2026</p>
+                <p className="text-serif text-lg text-wine/80 font-serif mt-2">6:30 PM Onwards</p>
+                <div className="mt-8 pt-8 border-t border-wine/10 text-[10px] uppercase tracking-widest text-wine/40 leading-loose">
+                  Evening Celebration
+                </div>
               </div>
             </div>
           </ScrollReveal>
@@ -803,12 +789,13 @@ const MainContent = ({ isPlaying, setIsPlaying }: { isPlaying: boolean, setIsPla
               <div className="absolute top-0 left-0 w-40 h-40 floral-corner-light opacity-10 group-hover:opacity-20 transition-opacity duration-700" />
               <div className="relative z-10">
                 <Clock className="text-wine mb-8 w-10 h-10 opacity-30 group-hover:opacity-60 transition-opacity" />
-              <h3 className="text-display text-[10px] tracking-[0.5em] text-wine/40 mb-8 uppercase">Auspicious Time</h3>
-              <p className="text-serif text-5xl mb-4 text-wine font-light uppercase">7:30 AM</p>
-              <p className="text-serif text-lg text-wine/60 italic font-serif">to 9:00 AM</p>
-              <div className="mt-8 pt-8 border-t border-wine/10 text-[10px] uppercase tracking-widest text-wine/40 leading-loose">
-                Auspicious Timing
-              </div>
+                <h3 className="text-display text-[10px] tracking-[0.5em] text-wine/40 mb-8 uppercase">Wedding</h3>
+                <p className="text-serif text-5xl mb-4 text-wine font-light uppercase">June 4</p>
+                <p className="text-serif text-lg text-wine/60 italic font-serif">Thursday, 2026</p>
+                <p className="text-serif text-lg text-wine/80 font-serif mt-2">7:30 AM to 9:00 AM</p>
+                <div className="mt-8 pt-8 border-t border-wine/10 text-[10px] uppercase tracking-widest text-wine/40 leading-loose">
+                  Auspicious Timing
+                </div>
               </div>
             </div>
           </ScrollReveal>
@@ -818,16 +805,16 @@ const MainContent = ({ isPlaying, setIsPlaying }: { isPlaying: boolean, setIsPla
               <div className="absolute bottom-0 right-0 w-40 h-40 floral-corner-light scale-x-[-1] scale-y-[-1] opacity-10 group-hover:opacity-20 transition-opacity duration-700" />
               <div className="relative z-10">
                 <MapPin className="text-wine mb-8 w-10 h-10 opacity-30 group-hover:opacity-60 transition-opacity" />
-              <h3 className="text-display text-[10px] tracking-[0.5em] text-wine/40 mb-8 uppercase">The Venue</h3>
-              <p className="text-serif text-4xl mb-4 text-wine font-light uppercase">RR Convention Center</p>
-              <p className="text-serif text-sm text-wine/80 italic font-serif leading-relaxed">
-                57/5A, Sirkali - Chidambaram Bypass Road,<br />
-                Near Trichy Link Road,<br />
-                Chidambaram - 608001
-              </p>
-              <div className="mt-8 pt-8 border-t border-wine/10">
-                <a href="https://maps.app.goo.gl/chidambaram" target="_blank" className="text-xs text-rose uppercase tracking-widest hover:underline hover:text-wine transition-colors">Get Directions</a>
-              </div>
+                <h3 className="text-display text-[10px] tracking-[0.5em] text-wine/40 mb-8 uppercase">The Venue</h3>
+                <p className="text-serif text-4xl mb-4 text-wine font-light uppercase">RR Convention Center</p>
+                <p className="text-serif text-sm text-wine/80 italic font-serif leading-relaxed">
+                  R R Convention Centre, bypass road,<br />
+                  opposite Sri Bhaktha anjaneyar temple,<br />
+                  Sirkali, Chidambaram, Tamil Nadu 608401
+                </p>
+                <div className="mt-8 pt-8 border-t border-wine/10">
+                  <a href="https://www.google.com/maps/search/?api=1&query=R+R+Convention+Centre,+bypass+road,+opposite+Sri+Bhaktha+anjaneyar+temple,+Sirkali,+Chidambaram,+Tamil+Nadu+608401" target="_blank" rel="noopener noreferrer" className="text-xs text-rose uppercase tracking-widest hover:underline hover:text-wine transition-colors">Get Directions</a>
+                </div>
               </div>
             </div>
           </ScrollReveal>
@@ -835,20 +822,19 @@ const MainContent = ({ isPlaying, setIsPlaying }: { isPlaying: boolean, setIsPla
 
         {/* Catering Section */}
         <section className="py-16 md:py-32 w-full max-w-5xl mx-auto px-6 text-center relative z-20">
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-64 h-64 md:w-80 md:h-80 floral-corner-alt rotate-45 opacity-30 -z-10 pointer-events-none" />
           <ScrollReveal>
             <div className="p-8 md:p-12 border border-wine/10 bg-white/80 backdrop-blur-2xl rounded-[2rem] md:rounded-[3rem] shadow-[0_20px_40px_rgba(128,0,32,0.05)] relative overflow-hidden group">
               <div className="absolute top-0 left-0 w-32 h-32 floral-corner-light transition-transform duration-700 group-hover:scale-110 origin-top-left" />
               <div className="absolute top-0 right-0 w-32 h-32 floral-corner-light scale-x-[-1] transition-transform duration-700 group-hover:scale-[1.1] origin-top-right" />
-              
+
               <div className="relative z-10">
                 <h4 className="text-[10px] uppercase tracking-[0.5em] text-wine/40 mb-8">Culinary Experience By</h4>
-              <div className="flex flex-col items-center gap-4 text-wine/80 font-serif italic text-xl">
-                <span className="text-2xl text-wine font-bold">S.R.M Catering Service</span>
-                <span className="text-sm opacity-80 font-sans tracking-widest uppercase text-wine/60">Managed by: Thiru. S.P. Murugesan (Chidambaram)</span>
-                <div className="w-12 h-px bg-wine/20 my-2" />
-                <span className="text-sm font-sans tracking-widest">Contact: 9566713219</span>
-              </div>
+                <div className="flex flex-col items-center gap-4 text-wine/80 font-serif italic text-xl">
+                  <span className="text-2xl text-wine font-bold">S.R.M Catering Service</span>
+                  <span className="text-sm opacity-80 font-sans tracking-widest uppercase text-wine/60">Managed by: Thiru. S.P. Murugesan (Chidambaram)</span>
+                  <div className="w-12 h-px bg-wine/20 my-2" />
+                  <span className="text-sm font-sans tracking-widest">Contact: 9566713219</span>
+                </div>
               </div>
             </div>
           </ScrollReveal>
@@ -856,8 +842,6 @@ const MainContent = ({ isPlaying, setIsPlaying }: { isPlaying: boolean, setIsPla
 
         {/* Motif Section */}
         <section className="w-full relative py-24 md:py-48 px-6">
-          <div className="absolute top-0 right-0 w-64 h-64 md:w-[32rem] md:h-[32rem] floral-corner-alt scale-x-[-1] opacity-20 -z-10 pointer-events-none" />
-          <div className="absolute bottom-0 left-0 w-64 h-64 md:w-[32rem] md:h-[32rem] floral-corner-alt scale-y-[-1] opacity-20 -z-10 pointer-events-none" />
           <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-24 items-center">
             <ScrollReveal>
               <div className="relative p-8 md:p-16 border border-wine/10 bg-white/80 backdrop-blur-2xl rounded-[2rem] md:rounded-3xl shadow-[0_20px_40px_rgba(128,0,32,0.05)] overflow-hidden">
@@ -890,8 +874,6 @@ const MainContent = ({ isPlaying, setIsPlaying }: { isPlaying: boolean, setIsPla
 
         {/* RSVP / Short Version Section */}
         <section className="py-32 md:py-64 w-full flex justify-center px-6 relative z-20">
-          <div className="absolute top-1/4 left-0 w-80 h-80 md:w-[40rem] md:h-[40rem] floral-corner-alt opacity-20 -z-10 pointer-events-none" />
-          <div className="absolute bottom-1/4 right-0 w-80 h-80 md:w-[40rem] md:h-[40rem] floral-corner-alt scale-x-[-1] scale-y-[-1] opacity-20 -z-10 pointer-events-none" />
           <ScrollReveal>
             <div className="max-w-4xl w-full border border-wine/10 p-8 md:p-32 bg-white/90 backdrop-blur-3xl relative rounded-[2rem] md:rounded-[3rem] shadow-[0_30px_60px_rgba(128,0,32,0.05)] overflow-hidden">
               <div className="absolute top-0 left-0 w-64 h-64 floral-corner-light z-0" />
@@ -908,10 +890,26 @@ const MainContent = ({ isPlaying, setIsPlaying }: { isPlaying: boolean, setIsPla
                 <div className="space-y-6 text-wine/90 font-serif italic text-lg md:text-xl leading-relaxed max-w-2xl mx-auto">
                   <p>Together with our families, we joyfully invite you to celebrate our wedding ceremony.</p>
 
-                  <div className="py-8 border-y border-wine/10 space-y-2">
-                    <p className="font-sans uppercase tracking-[0.4em] text-xs font-bold text-wine">4 June 2026</p>
-                    <p className="font-sans uppercase tracking-[0.2em] text-xs text-wine/80">7:30 AM - 9:00 AM</p>
-                    <p className="font-sans text-sm tracking-widest mt-4 text-wine">RR Convention Center, Chidambaram</p>
+                  <div className="py-8 border-y border-wine/10 space-y-6">
+                    <div>
+                      <p className="font-sans uppercase tracking-[0.4em] text-xs font-bold text-wine mb-1">Reception</p>
+                      <p className="font-sans uppercase tracking-[0.2em] text-[10px] text-wine/80">3 June 2026 • 6:30 PM Onwards</p>
+                    </div>
+                    <div>
+                      <p className="font-sans uppercase tracking-[0.4em] text-xs font-bold text-wine mb-1">Wedding</p>
+                      <p className="font-sans uppercase tracking-[0.2em] text-[10px] text-wine/80">4 June 2026 • 7:30 AM - 9:00 AM</p>
+                    </div>
+                    <p className="font-sans text-xs tracking-widest mt-6 pt-6 border-t border-wine/10 text-wine leading-relaxed">
+                      R R Convention Centre, bypass road, opposite Sri Bhaktha anjaneyar temple, Sirkali, Chidambaram, Tamil Nadu 608401
+                    </p>
+                    <a
+                      href="https://www.google.com/maps/search/?api=1&query=R+R+Convention+Centre,+bypass+road,+opposite+Sri+Bhaktha+anjaneyar+temple,+Sirkali,+Chidambaram,+Tamil+Nadu+608401"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-block mt-3 font-sans text-[10px] uppercase tracking-[0.3em] text-rose hover:text-wine transition-colors not-italic hover:underline"
+                    >
+                      ↗ Get Directions
+                    </a>
                   </div>
 
                   <p className="pt-6">We look forward to celebrating this beautiful occasion with you and your family.</p>
